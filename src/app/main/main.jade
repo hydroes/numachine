@@ -1,23 +1,378 @@
-.container
-  div
-    acme-navbar(creationdate='main.creationDate')
-  .jumbotron.text-center
-    h1 'Allo, 'Allo! Brian
-    p.lead
-      img(src='assets/images/yeoman.png', alt="I'm Yeoman")
-      br
-      |       Always a pleasure scaffolding your apps.
-    p.animated.infinite(ng-class='main.classAnimation')
-      button.btn.btn-lg.btn-success(type='button', ng-click='main.showToastr()') Splendid Toastr
-    p
-      | With ♥ thanks to the contributions of
-      acme-malarkey(extra-values="['Yeoman', 'Gulp', 'Angular']")
-  .row
-    .col-sm-6.col-md-4(ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'")
-      .thumbnail
-        img.pull-right(ng-src='assets/images/{{ awesomeThing.logo }}', alt='{{ awesomeThing.title }}')
-        .caption
-          h3 {{ awesomeThing.title }}
-          p {{ awesomeThing.description }}
-          p
-            a(ng-href='{{awesomeThing.url}}') {{ awesomeThing.url }}
+#wrapper
+  header#header
+    .container
+      nav#nav.navbar.navbar-collapsed-sm.navbar-default(role='navigation')
+        .navbar-header
+          button.navbar-toggle(data-target='.navbar-header-collapse', data-toggle='collapse', type='button')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='index.html')
+            img(alt='Jednotka', width='117', height='39', src='assets/images/logo.svg')
+        .collapse.navbar-collapse.navbar-header-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.active.dropdown
+              a.dropdown-toggle(data-delay='50', data-hover='dropdown', data-toggle='dropdown', href='#')
+                span
+                  | Home
+                  i.fa.fa-angle-down
+              ul.dropdown-menu(role='menu')
+                li.active.dropdown-submenu
+                  a(href='index.html') Home
+                li
+                  a(href='index2.html') Home 2
+                li
+                  a(href='index3.html') Home 3
+                li
+                  a(href='boxed.html') Boxed layout
+            li.dropdown
+              a.dropdown-toggle(data-delay='50', data-hover='dropdown', data-toggle='dropdown', href='#')
+                span
+                  | Pages
+                  i.fa.fa-angle-down
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='about_us.html') About us
+                li
+                  a(href='services.html') Services
+                li
+                  a(href='faq.html') FAQ
+                li
+                  a(href='404.html') 404 Error
+                li
+                  a(href='500.html') 500 Error
+                li
+                  a(href='coming_soon.html') Coming soon
+                li
+                  a(href='under_construction.html') Under construction
+            li.dropdown
+              a.dropdown-toggle(data-delay='50', data-hover='dropdown', data-toggle='dropdown', href='#')
+                span
+                  | Features
+                  i.fa.fa-angle-down
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='animations.html') Animations
+                li
+                  a(href='elements.html') Elements
+                li
+                  a(href='icons.html') Icons
+                li
+                  a(href='forms.html') Forms
+                li
+                  a(href='tables.html') Tables
+                li
+                  a(href='typography.html') Typography
+                li
+                  a(href='pricing_tables.html') Pricing tables
+                li.dropdown-submenu
+                  a(href='index.html')
+                    | Submenu
+                    i.fa.fa-angle-right
+                  ul.dropdown-menu(role='menu')
+                    li
+                      a(href='index.html') Submenu item
+                    li
+                      a(href='index.html') Submenu item
+                    li
+                      a(href='index.html') Submenu item
+            li.dropdown
+              a.dropdown-toggle(data-delay='50', data-hover='dropdown', data-toggle='dropdown', href='#')
+                span
+                  | Blog
+                  i.fa.fa-angle-down
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='blog_small.html') Small image
+                li
+                  a(href='blog_large.html') Large image
+                li
+                  a(href='blog_single_post.html') Single post
+            li.dropdown
+              a.dropdown-toggle(data-delay='50', data-hover='dropdown', data-toggle='dropdown', href='#')
+                span
+                  | Portfolio
+                  i.fa.fa-angle-down
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='portfolio.html') 2 columns
+                li
+                  a(href='portfolio_three_cols.html') 3 columns
+                li
+                  a(href='portfolio_four_cols.html') 4 columns
+                li
+                  a(href='portfolio_detail.html') Project detail
+            li.dropdown
+              a.dropdown-toggle(data-delay='50', data-hover='dropdown', data-toggle='dropdown', href='#')
+                span
+                  | Contact
+                  i.fa.fa-angle-down
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='contact.html') Contact
+                li
+                  a(href='contact2.html') Contact 2
+                li
+                  a(href='contact3.html') Contact 3
+  #main(role='main')
+    // / carousel blur
+    #carousel-example-1.hero-carousel.carousel-blur.carousel-blur-arrows.carousel-blur-pagination.flexslider
+      ul.slides
+        li.item
+          .container
+            .row
+              .col-lg-12.animate
+                h1.big.fadeInUp.animated
+                  | Fully responsive
+                  | &
+                  | Retina ready
+                p.normal.fadeInUp.animated Proin facilisis aliquam nunc quis varius.
+                a.btn.btn-contrast.btn-lg.fadeInRight.animated(href='#')
+                  | Show more
+        li.item
+          .container
+            .row
+              .col-lg-12.animate
+                h2.big.fadeInLeftBig.animated
+                  | Clean, flat
+                  | &
+                  | polished design
+                p.normal.fadeInRightBig.animated Sed felis ligula, eleifend at neque eget.
+                a.btn.btn-contrast.btn-lg.fadeInDownBig.animated(href='#')
+                  | Show more
+        li.item
+          .container
+            .row
+              .col-lg-12.animate
+                h2.big.fadeInRightBig.animated Based on Twitter Bootstrap
+                p.normal.fadeInLeftBig.animated Nam nec tellus molestie, sollicitudin, at...
+                a.btn.btn-contrast.btn-lg.fadeInUpBig.animated(href='#')
+                  | Show more
+    #main-content
+      .container
+        .row
+          .col-sm-12
+            p.lead.lead-lg.text-center
+              | Quisque nunc sapien, malesuada vitae luctus in, blandit eu erat. Cras fringilla eros eget justo dictum convallis.
+        .panels-wrapper
+          .row.panels
+            .col-sm-4.panel-item
+              a.panel.panel-image(href='#')
+                .panel-icon
+                  i.fa.fa-clock-o.icon
+                .panel-heading
+                  img.img-responsive-sm(alt='Project planning', width='768', height='300', src='http://placehold.it/768x300')
+                .panel-body
+                  h3.panel-title Project planning
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu pharetra felis.est.
+            .col-sm-4.panel-item
+              a.panel.panel-image(href='#')
+                .panel-icon
+                  i.fa.fa-cog.icon
+                .panel-heading
+                  img.img-responsive-sm(alt='Easy customizable', width='768', height='300', src='http://placehold.it/768x300')
+                .panel-body
+                  h3.panel-title Easy customizable
+                  p
+                    | Etiam init rutrum ligula semper neque relu dapibus, non tempus mauris sodales.est.
+            .col-sm-4.panel-item
+              a.panel.panel-image(href='#')
+                .panel-icon
+                  i.fa.fa-rocket.icon
+                .panel-heading
+                  img.img-responsive-sm(alt='Fastest workers', width='768', height='300', src='http://placehold.it/768x300')
+                .panel-body
+                  h3.panel-title Fastest workers
+                  p Pellentesque id neque sit amet nibh placerat suscipit et a purus, mauris id.
+        .row
+          .col-sm-12
+            .page-header.page-header-with-icon
+              i.fa.fa-star
+              h2 Top features
+            .text-boxes
+              .row.text-box
+                .col-sm-6
+                  img.img-responsive.center-block(alt='Lorem ipsum dolor sit amet', width='340', height='188', src='http://placehold.it/340x188')
+                .col-sm-6
+                  h3.title
+                    a(href='#') Lorem ipsum dolor sit amet
+                  p
+                    | Mauris at ultricies eros. Morbi vel dui nec arcu suscipit euismod. Phasellus pellentesque lectus eget quam ullamcorper consectetur. Vestibulum vitae risus a erat mollis lac in venenatis tellus. Morbi et tristique lacus.
+                  a.btn.btn-contrast.btn-bordered.btn-sm(href='#') Read more
+              hr
+              .row.text-box
+                .col-sm-6.col-sm-push-6
+                  img.img-responsive.center-block(alt='Praesent vitae adipiscing nunc', width='330', height='183', src='http://placehold.it/330x183')
+                .col-sm-6.col-sm-pull-6
+                  h3.title
+                    a(href='#') Praesent vitae adipiscing nunc
+                  p
+                    | Integer fringtilla fringilla mauris eget accumsan. Nullam quis consequat ipsum, eu cursus mi. Donec quis quam at risus viverra venenatis. Phasellus non nulla tortor. Fusce congue enim sed ullamcorper cursus. Donec tincidunt elit sed felis iaculis laoreet.
+                  a.btn.btn-contrast.btn-bordered.btn-sm(href='#') Read more
+        .row
+          .col-sm-12
+            .page-header.page-header-with-icon
+              i.fa.fa-suitcase
+              h2
+                | Our last projects
+                small Phasellus malesuada sapien non orci semper gravida.
+            .row.portfolio-boxes
+              .col-sm-3.col-xs-6.no-mb-t-xs.portfolio-box
+                a.image-link(href='portfolio_detail.html')
+                  i.fa.fa-search
+                  img.img-responsive.img-rounded.center-block(alt='Etiam vestibulum', width='262', height='262', src='http://placehold.it/262x262')
+                h3.title Etiam vestibulum
+                p.category Photography
+              .col-sm-3.col-xs-6.no-mb-t-xs.portfolio-box
+                a.image-link(href='portfolio_detail.html')
+                  i.fa.fa-link
+                  img.img-responsive.img-rounded.center-block(alt='Malesuada', width='262', height='262', src='http://placehold.it/262x262')
+                h3.title Malesuada
+                p.category Webdesign
+              .col-sm-3.col-xs-6.portfolio-box
+                a(href='portfolio_detail.html')
+                  .image-link
+                    i.fa.fa-search
+                    img.img-responsive.img-rounded.center-block(alt='Dictum vulputate', width='262', height='262', src='http://placehold.it/262x262')
+                  h3.title Dictum vulputate
+                  p.category Identity
+              .col-sm-3.col-xs-6.portfolio-box
+                a(href='portfolio_detail.html')
+                  .image-link
+                    i.fa.fa-search
+                    img.img-responsive.img-rounded.center-block(alt='Semper massa', width='262', height='262', src='http://placehold.it/262x262')
+                  h3.title Semper massa
+                  p.category Marketing
+        .row
+          .col-sm-12
+            .page-header.page-header-with-icon
+              i.fa.fa-quote-right
+              h2 Testimonials
+            .row.quotes
+              #carousel-testimonials.carousel.carousel-default.slide.carousel-auto
+                .carousel-inner
+                  .item.active.quote
+                    .col-sm-12.text-center
+                      p.lead
+                        | Mauris at ultricies eros. Morbi vel dui nec arcu suscipit euismod. Phasellus pellentesque lectus eget quam ullamcorper consectetur. Vestibulum vitae risus a erat mollis lac in venenatis tellus.
+                      .author-wrapper
+                        p.author
+                          strong John Doe
+                          | ,
+                          |                               Company name
+                  .item.quote
+                    .col-sm-12.text-center
+                      p.lead
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent accumsan leo tellus. Nulla fringilla elementum nisl, vitae faucibus risus. Donec ut tristique eros. Curabitur mattis auctor turpis.
+                      .author-wrapper
+                        p.author
+                          strong Michal Marek
+                          | ,
+                          |                               Bublina Studio
+                  .item.quote
+                    .col-sm-12.text-center
+                      p.lead
+                        | Aenean lorem quam, dapibus et enim vel, ultrices tincidunt tellus. Donec mattis massa et lacus interdum lobortis. Pellentesque habitant morbi tristique senectus. Curabitur mattis auctor turpis.
+                      .author-wrapper
+                        p.author
+                          strong Paľo Delinčák
+                          | ,
+                          |                               Bublina Studio
+                  .item.quote
+                    .col-sm-12.text-center
+                      p.lead
+                        | Integer quis placerat leo, sit amet varius odio. Fusce sollicitudin metus eu eros egestas cursus ut ullamcorper augue. Integer blandit tellus a urna semper, sit amet tempor orci ornare. Mauris nec.
+                      .author-wrapper
+                        p.author
+                          strong Jane Doe
+                          | ,
+                          |                               Company name
+                ol.carousel-indicators
+                  li.active(data-slide-to='0', data-target='#carousel-testimonials')
+                  li(data-slide-to='1', data-target='#carousel-testimonials')
+                  li(data-slide-to='2', data-target='#carousel-testimonials')
+                  li(data-slide-to='3', data-target='#carousel-testimonials')
+    #scroll-to-top.fade
+      i.fa.fa-chevron-up
+  footer#footer
+    #footer-main
+      .container
+        .row
+          .col-md-3.col-sm-6.info-box
+            .logo-container
+              img(alt='Jednotka', width='117', height='39', src='assets/images/logo.svg')
+            p.no-mg-b
+              | Integer vulputate porta augue, sit amet interdum tellus commodo et. Sed volutpat neque vel turpis ultrices sini bibendum. Aliquam quis malesuada.
+          .col-md-3.col-sm-6.info-box
+            h2.title Contact
+            .icon-boxes
+              .icon-box
+                .icon.icon-wrap
+                  i.fa.fa-map-marker
+                .content
+                  | 4567 Street name,
+                  br
+                  |                       012 12 City name, Country
+              .icon-box
+                .icon.icon-wrap
+                  i.fa.fa-phone
+                .content
+                  a(href='tel:+012345678') +012 345 678
+              .icon-box
+                .icon.icon-wrap
+                  i.fa.fa-envelope
+                .content
+                  a(href='mailto:info@bublinastudio.com') info@bublinastudio.com
+              .icon-box
+                .icon.icon-wrap
+                  i.fa.fa-globe
+                .content
+                  a(href='#') www.bublinastudio.com
+          .col-md-3.col-sm-6.info-box.social-box
+            h2.title Latest tweets
+            .icon-boxes
+              .icon-box
+                .icon.icon-wrap
+                  i.fa.fa-twitter.text-contrast
+                .content
+                  p
+                    | Phasellus vulputate lobortis sem. Mauris id velit in urna.
+                    br
+                    a.time(href='#')
+                      i 1 hour ago
+              .icon-box
+                .icon.icon-wrap
+                  i.fa.fa-twitter.text-contrast
+                .content
+                  p
+                    | Etiam luctus, dui congue tempus blandit, dui.
+                    br
+                    a.time(href='#')
+                      i 3 hours ago
+          .col-md-3.col-sm-6.info-box
+            h2.title Newsletter
+            p Proin condimentum, nisi vel vestibulum ultricies, nunc elit.
+            form.form-inline.form-validation(action='index.html', method='get')
+              .row
+                .form-group.control-group.col-xs-9.col-md-8.col-lg-9
+                  input#newsletter_email.form-control(data-rule-email='true', data-rule-required='true', name='newsletter[email]', placeholder='Email address', type='email')
+                .col-xs-3.col-md-4.col-lg-3
+                  button.btn.btn-medium-light.btn-block(type='submit')
+                    i.fa.fa-reply.text-white
+    #footer-copyright
+      .container
+        .row
+          .col-lg-12.clearfix
+            p.copyright
+              | Copyright
+              | ©
+              | 2013 Jednotka
+            .links
+              a.btn.btn-circle.btn-medium-light.btn-sm(href='#')
+                i.fa.fa-twitter.text-dark
+              a.btn.btn-circle.btn-medium-light.btn-sm(href='#')
+                i.fa.fa-dribbble.text-dark
+              a.btn.btn-circle.btn-medium-light.btn-sm(href='#')
+                i.fa.fa-facebook.text-dark
